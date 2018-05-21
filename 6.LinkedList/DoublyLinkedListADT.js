@@ -20,7 +20,7 @@ function LList() {
 function dispReverse() {
   // 역순으로 요소 출력
   var currNode = this.head;
-  currNode = this.findLast;
+  currNode = this.findLast();
   while (!(currNode.previous === null)) {
     console.log(currNode.element);
     currNode = currNode.previous;
@@ -45,6 +45,22 @@ function remove(item) {
   }
 }
 
+function display() {
+  var currNode = this.head;
+  while (!(currNode.next === null)) {
+    console.log(currNode.next.element);
+    currNode = currNode.next;
+  }
+}
+
+function find(item) {
+  var currNode = this.head;
+  while (currNode.element !== item) {
+    currNode = currNode.next;
+  }
+  return currNode;
+}
+
 function insert(newElement, item) {
   var newNode = new Node(newElement);
   var current = this.find(item);
@@ -52,3 +68,15 @@ function insert(newElement, item) {
   newNode.previous = current; //새 노드의 previous를 이전 노드로 설정
   current.next = newNode;
 }
+
+var cities = new LList();
+cities.insert("seoul", "head");
+cities.insert("ilsan", "seoul");
+cities.insert("busan", "ilsan");
+cities.insert("tokyo", "busan");
+cities.display();
+console.log("-------");
+cities.remove("ilsan");
+cities.display();
+console.log("-------");
+cities.dispReverse();
