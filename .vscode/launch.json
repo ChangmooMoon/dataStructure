@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/6.LinkedList/DoublyLinkedListADT.js"
+      "program": "${workspaceFolder}/8.Hashing/HashtableADT.js"
     }
   ]
 }
